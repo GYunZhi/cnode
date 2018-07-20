@@ -7,5 +7,10 @@
 
 /* index style */
 .page-warp {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
+}
+.main-page {
+    flex: 1;
 }

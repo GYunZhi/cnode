@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import {Layout} from "antd"
 import './index.css'
 class Footer extends Component {
   render() {
     return (
-      <div className="index">
-        "底部"
-      </div>
+      <Layout.Footer>
+        <div className='footer'>赣ICP备18002683号</div>
+      </Layout.Footer>
     );
   }
 }

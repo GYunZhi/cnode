@@ -8,6 +8,7 @@ class App extends Component {
     return (
       <div className="page-warp">
         <Header></Header>
+        <main className="main-page"></main>
         <Footer></Footer>
       </div>
     )
