@@ -1,0 +1,16 @@
+.logo {
+    color: #fff;
+    margin-bottom: 0;
+    text-align: center;
+}
+.header-divider {
+    float: left;
+    height: 44px;
+    margin: 10px 0;
+}
+.xs-wrap {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}

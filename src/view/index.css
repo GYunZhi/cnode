@@ -1,0 +1,11 @@
+/* commom style */
+.wrap {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+
+/* index style */
+.page-warp {
+    height: 100vh;
+}

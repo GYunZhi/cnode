@@ -1,0 +1,13 @@
+.header-nav {
+  float: left;
+  margin-left: 30px;
+  line-height: 62px;
+}
+.header-nav .ant-menu-item-selected {
+  background-color: transparent !important;
+}
+.xs-nav {
+  float: left;
+  margin-left: 48px;
+  line-height: 62px;
+}
