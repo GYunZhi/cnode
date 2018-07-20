@@ -1,9 +1,8 @@
 /* commom style */
-.wrap {
+.container {
     max-width: 980px;
     margin: 0 auto;
 }
-
 
 /* index style */
 .page-warp {

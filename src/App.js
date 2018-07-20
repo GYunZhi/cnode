@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <div className="page-warp">
         <Header></Header>
-        <main className="main-page"></main>
+        <main className="main-page">
+          <RouterIndex />
+        </main>
         <Footer></Footer>
       </div>
     )
