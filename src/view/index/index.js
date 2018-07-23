@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import {Menu, Row, Col} from "antd"
 import {Link} from "react-router-dom"
 import './index.css'
+
+let arr = []
+for( var i= 0; i <100; i++) {
+  arr.push(<li>第{i}个li</li>)
+}
 class Index extends Component {
+  constructor (props) {
+    super(props)
+  }
   render() {
     return (
       <div className="page-index">
@@ -29,6 +37,10 @@ class Index extends Component {
                 <Link to="/index/dev">测试</Link>
                 </Menu.Item>
               </Menu>
+            </Col>
+
+            <Col className="index-list" md={18}>
+                {/* {arr} */}
             </Col>
           </Row>
         </div>

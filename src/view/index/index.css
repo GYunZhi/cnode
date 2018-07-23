@@ -1,7 +1,48 @@
+.page-index {
+  height: 100%;
+}
 .page-index .container {
   border: 1px solid #ccc;
   border-top: none;
+  height: 100%;
 }
 .index-menu {
-  
+  border-right: none;
+}
+.index-menu li {
+  margin-right: -1px;
+  text-align: center;
+  border-right: 3px solid rgba(0,0,0,0);
+}
+.index-menu li:hover,
+.index-menu .ant-menu-item-selected {
+  background-color: #e6f7ff;
+  border-right-color: #1890ff;
+}
+.index-list {
+  border-left: 1px solid #ccc;
+  height: 100%;
+}
+/* 处理小屏,也可以通过栅格系统处理 */
+@media all and (max-width: 767px) {
+  .index-menu {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+  .index-menu li {
+    flex: 1;
+    border: none;
+    border-bottom: 3px solid rgba(0,0,0,0);
+    margin: 0 0 -1px 0 !important;
+  }
+  .index-menu li:hover,
+  .index-menu .ant-menu-item-selected {
+    background-color: #e6f7ff;
+    border-bottom-color: #1890ff;
+  }
+  .index-list {
+  height: auto;
+  border-left: none;
+  margin-bottom: -40px;
+}
 }
