@@ -6,6 +6,9 @@
   border-top: none;
   height: 100%;
 }
+.page-index .ant-row {
+  height: 100%;
+}
 .index-menu {
   border-right: none;
 }
@@ -41,8 +44,7 @@
     border-bottom-color: #1890ff;
   }
   .index-list {
-  height: auto;
-  border-left: none;
-  margin-bottom: -40px;
-}
+    height: auto;
+    border-left: none;
+  }
 }

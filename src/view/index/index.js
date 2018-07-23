@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Menu, Row, Col} from "antd"
 import {Link} from "react-router-dom"
+import ListItem from './ListItem'
 import './index.css'
 
 let arr = []
@@ -40,7 +41,7 @@ class Index extends Component {
             </Col>
 
             <Col className="index-list" md={18}>
-                {/* {arr} */}
+                <ListItem></ListItem>
             </Col>
           </Row>
         </div>

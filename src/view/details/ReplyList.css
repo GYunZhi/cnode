@@ -1,0 +1,10 @@
+.replyList .ant-list-item-meta-avatar {
+  display: block;
+}
+.ant-list-item-action {
+  margin-left: 50px;
+}
+.ant-list-item-meta {
+  min-width: 200px;
+  align-items: center;
+}

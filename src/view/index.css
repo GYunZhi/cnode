@@ -10,6 +10,9 @@
     flex-direction: column;
     height: 100vh;
 }
+.page-warp img {
+    max-width: 100%;
+}
 .main-page {
     flex: 1;
 }

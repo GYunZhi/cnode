@@ -1,0 +1,30 @@
+.topic-list {
+  line-height: 32px;
+}
+.topic-list .ant-list-item {
+  position: relative;
+}
+.topic-list .ant-list-item * {
+  vertical-align: middle;
+}
+.topic-list .ant-list-item-content {
+  display: block;
+}
+.topic-list .user-name {
+  margin: 0 10px 0 5px;
+}
+.topic-list h4 {
+  display: inline-block;
+  margin: 0;
+}
+.topic-list time {
+  position: absolute;
+  right: 0;
+  top: 12px;
+}
+/* 小屏下适配 */
+@media all and (max-width: 767px) {
+  .topic-list h4 {
+      display: block;
+  }
+}
