@@ -5,3 +5,7 @@
 .header-nav .ant-menu-item-selected {
   background-color: transparent !important;
 }
+/* 菜单选中样式 */
+.selected {
+  color: #1890ff !important;
+}

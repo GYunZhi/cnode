@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import {Menu, Row, Col} from "antd"
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import ListItem from './ListItem'
 import './index.css'
 
-let arr = []
-for( var i= 0; i <100; i++) {
-  arr.push(<li>第{i}个li</li>)
-}
 class Index extends Component {
-  constructor (props) {
-    super(props)
-  }
   render() {
+    let tab = this.props.match.params.id;
     return (
       <div className="page-index">
         <div className="container">
@@ -20,28 +14,33 @@ class Index extends Component {
             <Col  md={6}>
               <Menu className="index-menu">
                 <Menu.Item>
-                  <Link to="/index/all">全部</Link>
+                  <NavLink to="/index/all" activeClassName='selected'>全部</NavLink>
                 </Menu.Item>
+
                 <Menu.Item>
-                  <Link to="/index/good">精华</Link>
+                  <NavLink to="/index/good" activeClassName='selected'>精华</NavLink>
                 </Menu.Item>
+
                 <Menu.Item>
-                  <Link to="/index/ask">问题</Link>
+                  <NavLink to="/index/ask" activeClassName='selected'>问题</NavLink>
                 </Menu.Item>
+
                 <Menu.Item>
-                  <Link to="/index/share">分享</Link>
+                  <NavLink to="/index/share" activeClassName='selected'>分享</NavLink>
                 </Menu.Item>
+
                 <Menu.Item>
-                  <Link to="/index/job">招聘</Link>
+                  <NavLink to="/index/job" activeClassName='selected'>招聘</NavLink>
                 </Menu.Item>
+
                 <Menu.Item>
-                <Link to="/index/dev">测试</Link>
+                  <NavLink to="/index/dev" activeClassName='selected'>测试</NavLink>
                 </Menu.Item>
               </Menu>
             </Col>
 
             <Col className="index-list" md={18}>
-                <ListItem></ListItem>
+                <ListItem tab= {tab}></ListItem>
             </Col>
           </Row>
         </div>

@@ -2,18 +2,86 @@ import React, { Component } from 'react';
 import {List, Avatar} from "antd"
 import {Link} from "react-router-dom"
 import './ListItem.css'
-import data from './data.js'
+// import data from './data.js'
 import Lable from '../../components/Lable'
+import {connect} from 'react-redux'
+import http from '../../http'
+import { getTopicList } from '../../actions/list'
+
 class ListItem extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      page: 1,
+      data: [],
+      tab: this.props.tab,
+      loading: false
+    }
   }
+
+  componentDidMount () {
+    this._fetchData()
+  }
+
+  componentWillReceiveProps (nextProp) {
+    if(this.props.tab !== nextProp.tab) {
+      this.setState({
+        page: 1,
+        tab: nextProp.tab
+      }, () => {
+        this._fetchData()
+      })
+    }
+  }
+
+  shouldComponentUpdate(nextProps,nextState){
+    return true;
+  }
+
+  _fetchData(reset = true) {
+    this.setState({loading: true})
+    http.get(`/topics?tab=${this.state.tab}&page=${this.state.page}&limit=15`).then(resp => {
+      this.setState({
+        data: resp.data.data
+      })
+
+      // 派发一个action 函数
+      this.props.dispatch(getTopicList(resp.data.data))
+
+      // 直接派发一个action 对象
+      // this.props.dispatch({ type: 'SET_LIST', data: resp.data.data })
+
+    }).catch(error => {
+      console.error(error.response)
+    }).finally(() => {
+      this.setState({loading: false})
+    })
+  }
+
+  _onChange (current) {
+    this.setState({
+      page: current
+    }, () => {
+      this._fetchData()
+    })
+  }
+
   render() {
     return (
       <List
         className="list-item"
-        loading = {false}
-        dataSource= {data.data}
+        loading = {this.state.loading}
+        dataSource = {this.state.data}
+        pagination = {
+          {
+            current: this.state.page,
+            pageSize: 15,
+            total: 1000,
+            onChange: (current) => {
+              this._onChange(current)
+            }
+          }
+        }
         renderItem = {item => (
           <List.Item
             actions={['回复:' + item.reply_count, '访问:' + item.visit_count]}
@@ -43,4 +111,10 @@ class ListItem extends Component {
   }
 }
 
-export default ListItem
+function select (state) {
+  return {
+    list: state.list
+  }
+}
+
+export default connect(select)(ListItem)
