@@ -3,8 +3,20 @@ import {Menu, Row, Col} from "antd"
 import {NavLink} from "react-router-dom"
 import ListItem from './ListItem'
 import './index.css'
+import propTypes from 'prop-types'
 
 class Index extends Component {
+
+  static childContextTypes = {
+    color: propTypes.string
+  }
+
+  getChildContext() {
+    return {
+      color: 'red'
+    }
+  }
+
   render() {
     let tab = this.props.match.params.id;
     return (

@@ -7,8 +7,14 @@ import Lable from '../../components/Lable'
 import {connect} from 'react-redux'
 import http from '../../http'
 import { getTopicList } from '../../actions/list'
+import propTypes from 'prop-types'
 
 class ListItem extends Component {
+
+  static contextTypes = {
+    color: propTypes.string
+  }
+
   constructor (props) {
     super(props)
     this.state = {
@@ -20,6 +26,9 @@ class ListItem extends Component {
   }
 
   componentDidMount () {
+    // console.log(this)
+    // console.log(this.props)
+    // console.log(this.context)
     this._fetchData()
   }
 
@@ -117,4 +126,5 @@ function select (state) {
   }
 }
 
+// connect(mapStateToProps, mapDispatchToProps, mergeProps, options) 
 export default connect(select)(ListItem)

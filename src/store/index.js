@@ -22,7 +22,8 @@ const composeEnhancers = composeWithDevTools({
 // 在这里可以处理reducer的持久化
 const reducer = combineReducers(reducers)
 
-
+//createStore函数签名 createStore(reducer, [preloadedState], enhancer)
+// enhancer, 是一个组合 store creator 的高阶函数，返回一个,新的强化过的 store creator
 export const store = createStore(
   reducer,
   undefined,
