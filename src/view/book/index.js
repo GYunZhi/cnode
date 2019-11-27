@@ -11,8 +11,7 @@ class Book extends Component {
               <Card
                 key={item.title}
                 title={item.title}
-                type='inner'
-              >
+                type='inner'>
                 <div
                   dangerouslySetInnerHTML = {{
                     __html: item.content
